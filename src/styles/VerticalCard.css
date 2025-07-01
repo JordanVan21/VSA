@@ -1,0 +1,256 @@
+.vertical-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: start;
+  background: linear-gradient(to right, #fff8f0, #fdf2f8); /* soft peach-pink tone */
+  border: none;
+  border-radius: 30px;
+  padding: 20px 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.vertical-container p {
+  font-size: 1.5rem;
+  margin: 0;
+  padding-top: 1rem;
+  padding-left: 4%;
+  color: black;
+}
+
+.vertical-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.vertical-img {
+  margin: 0 auto;
+  max-width: 100%;
+  max-width: 650px;
+  height: auto;
+  display: block;
+}
+
+.vertical-container .highlights {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.list-items {
+    margin-top: 1%;
+    margin-left: 5%;
+    font-size: clamp(0.8rem, 1.3rem, 2.5rem);
+}
+
+/* Product Vertical Cards */
+.one-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: start;
+  background: linear-gradient(to bottom right, #FFF4CC, #FFFFFF);
+  border: none;
+  border-radius: 30px;
+  margin: 15px;
+  padding-top: 4%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  color: #2E2E2E;
+  min-height: 725px;
+}
+
+.merch-head{
+  padding-left: 8%;
+  color: #2E2E2E;
+
+}
+
+.one-container p {
+  font-size: 1.2rem;
+  padding-left: 8%;
+  padding-right: 10%;
+  color: #333333;
+}
+
+.one-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0% 12%;
+}
+
+.one-img {
+  max-width: 420px;
+  height: 350px;
+  object-fit: cover;
+  background-color: white;
+}
+
+.innerCard {
+  background: linear-gradient(135deg, #fdf6ec, #fff);
+  border: 3px solid #D62828;  /* deep red */
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  padding: 2rem;
+  color: #222;
+  height: 690px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.innerCard h3 {
+  color: #003366;  /* deep blue */
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+.innerCard p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+  color: #444;
+}
+
+.innerCard img {
+  width: 200px;
+  height: auto;
+}
+
+.small-cards {
+  margin: 5% 2%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 2fr));
+  text-align: center;
+  gap: 2%;
+  height: 210px;
+
+}
+
+.small-cards > div {
+  margin: 0% 1%;
+  height: 210px;
+}
+
+.subCard {
+  background: linear-gradient(135deg, #fdf6ec, #fff);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1rem;
+  border: 5px solid #D62828;
+  border-radius: 8px;
+}
+
+.subCard p {
+  font-size: clamp(8px, 2.5vw, 15px);
+}
+
+.innerCard {
+  animation: floatIn 1s ease forwards;
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* ────────────────────────────  TABLETS  ──────────────────────────── */
+/* iPad portrait / landscape & small laptops  ≤ 1024 px */
+@media (max-width: 1024px) {
+  /* GENERAL VERTICAL INFO CARD */
+  .vertical-container {
+    grid-template-rows: 1fr;          /* stack image + text */
+    padding: 1.75rem 1rem;
+    gap: 1.25rem;
+    border-radius: 24px;
+  }
+  .vertical-container p { font-size: 1.25rem; }
+
+  .vertical-box { margin-bottom: 1rem; }
+  .vertical-img { max-width: 90%; }
+
+  .list-items   { margin-left: 3%; font-size: clamp(0.75rem, 1.1rem, 1.6rem); }
+
+  /* PRODUCT VERTICAL CARD */
+  .one-container {
+    padding-top: 3%;
+    min-height: 620px;
+  }
+  .merch-head { padding-left: 5%; }
+  .one-container p { padding: 0 6% 0 5%; font-size: 1.1rem; }
+
+  .one-box { margin: 0 8%; }
+  .one-img { max-width: 340px; height: 290px; }
+
+  /* INNER FEATURE CARD */
+  .innerCard {
+    padding: 1.75rem;
+    height: 600px;
+  }
+  .innerCard h3 { font-size: 1.5rem; }
+  .innerCard img { width: 160px; }
+
+  /* SUB-CARDS GRID */
+  .small-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3%;
+    height: auto;
+    margin: 6% 4%;
+  }
+  .subCard p { font-size: clamp(0.65rem, 2vw, 0.9rem); }
+}
+
+/* ────────────────────────────  PHONES  ──────────────────────────── */
+/* Phones & very small tablets  ≤ 640 px */
+@media (max-width: 640px) {
+  /* GENERAL VERTICAL INFO CARD */
+  .vertical-container {
+    padding: 1.25rem 0.75rem;
+    border-radius: 18px;
+  }
+  .vertical-container p { font-size: 1rem; padding-left: 0; }
+
+  .vertical-box { justify-content: center; }
+  .vertical-img { max-width: 100%; border-radius: 10px; }
+
+  .title, .title-extra, .sub-title { margin-left: 0; text-align: center; }
+  .list-items   { margin-left: 0; font-size: clamp(0.7rem, 0.95rem, 1.2rem); }
+
+  /* PRODUCT VERTICAL CARD */
+  .one-container {
+    margin: 10px 0;
+    padding-top: 5%;
+    min-height: 0;               /* allow auto height */
+  }
+  .merch-head { padding-left: 0; text-align: center; }
+  .one-container p { padding: 0 5%; font-size: 0.95rem; }
+
+  .one-box { margin: 0 5%; }
+  .one-img { max-width: 100%; height: 240px; }
+
+  /* INNER FEATURE CARD */
+  .innerCard {
+    padding: 1.25rem;
+    height: auto;
+  }
+  .innerCard h3 { font-size: 1.3rem; }
+  .innerCard img { width: 140px; }
+
+  /* SUB-CARDS GRID */
+  .small-cards {
+    grid-template-columns: 1fr;   /* stack vertically */
+    gap: 4%;
+    margin: 8% 2%;
+  }
+  .subCard { border-width: 3px; }
+  .subCard p { font-size: clamp(0.6rem, 0.85rem, 1rem); }
+}

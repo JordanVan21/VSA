@@ -1,0 +1,56 @@
+.btn-group {
+    border-radius: 100px;
+    margin-left: 8%;
+    padding-right: 50px;
+}
+
+.crossed-out {
+  position: relative;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.crossed-out::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: red;
+  transform: rotate(-15deg);
+}
+
+
+/* ──────────────────────────── TABLETS ──────────────────────────── */
+/* iPad portrait/landscape & small laptops (≤ 1024 px) */
+@media (max-width: 1024px) {
+  .btn-group {
+    margin-left: 5%;          /* pull closer to viewport edge   */
+    padding-right: 30px;      /* tighter padding                */
+    border-radius: 80px;      /* slightly smaller pill radius   */
+  }
+
+  /* keep the strike-through centred on narrower buttons */
+  .crossed-out::after {
+    left: 8%;
+    width: 84%;
+  }
+}
+
+/* ──────────────────────────── PHONES ──────────────────────────── */
+/* Phones & small tablets (≤ 640 px) */
+@media (max-width: 640px) {
+  .btn-group {
+    margin-left: 2%;
+    padding-right: 15px;
+    border-radius: 60px;
+  }
+
+  /* fine-tune strike-through for tiny widths */
+  .crossed-out::after {
+    left: 6%;
+    width: 88%;
+    height: 1.5px;            /* slimmer line looks better here */
+  }
+}

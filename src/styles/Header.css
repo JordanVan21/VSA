@@ -1,0 +1,163 @@
+/* Header container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110px;
+  padding: 32px 32px;
+  border-bottom: 5px solid #4CAF50;
+  background-color: #fff;
+}
+
+/* Logo image */
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-left: -30px;
+  margin-top: -11px;
+}
+.logo {
+  width: 9vw;
+  height: auto;
+}
+
+/* Navigation container */
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+/* Individual nav links */
+.nav-link {
+  position: relative;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: black;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Underline animation on hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #ffcc00;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active link indicator */
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Optional: highlight active color */
+.nav-link.active {
+  font-weight: bold;
+  color: #8b0000;
+} 
+
+/* Banner container inside header */
+.banner-container {
+  position: relative;
+  width: 800px; 
+  height: 50px; 
+  overflow: hidden; 
+  margin-left: 20px;
+}
+
+/* Actual banner inside the box */
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+
+/* ───────────────────────────────  TABLETS  ─────────────────────────────── */
+/* iPad portrait/landscape & small laptops  (≤ 1024 px) */
+@media (max-width: 1024px) {
+  .header {
+    height: 90px;
+    padding: 24px 20px;
+  }
+
+  .logo-container {
+    margin-left: -10px;
+    margin-top: -6px;
+  }
+  .logo {                             /* slightly larger % because viewport is narrower */
+    width: 12vw;
+  }
+
+  .nav {
+    gap: 28px;
+  }
+
+  .nav-link {
+    font-size: 1.8rem;
+  }
+
+  /* reduce underline thickness for smaller text */
+  .nav-link::after,
+  .nav-link.active::after {
+    height: 2px;
+  }
+
+  .banner-container {                 /* shorten banner box */
+    width: 600px;
+    height: 46px;
+  }
+  .banner {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+}
+
+/* ───────────────────────────────  PHONES  ─────────────────────────────── */
+/* Phones and very small tablets  (≤ 640 px) */
+@media (max-width: 640px) {
+  .header {
+    height: 70px;
+    padding: 18px 14px;
+  }
+
+  .logo {
+    width: 18vw;                      /* keep logo readable */
+  }
+
+  .nav {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+    padding: 3px 0;
+  }
+  .nav-link::after,
+  .nav-link.active::after {
+    height: 2px;
+  }
+
+  /* Hide or shrink the scrolling banner on small screens */
+  .banner-container {
+    display: none;                    /* comment out if you prefer a smaller banner */
+    /* If you want to keep it, use:
+       width: 100%;
+       height: 40px;
+       margin-left: 0;
+    */
+  }
+}

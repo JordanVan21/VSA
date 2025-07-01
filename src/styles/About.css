@@ -1,0 +1,176 @@
+.about h1 {
+    font-size: clamp(20px, 5vw, 60px);
+}
+
+.carasoul {
+    height: 690px;
+}
+
+.about-us-head {
+  font-weight: bold;
+  text-align: center;
+  margin: 8% 40%;
+  font-size: clamp(45px, 60px, 75px);
+  background: linear-gradient(
+    90deg,
+    #c8102e,
+    #fcd116,
+    #006a44,
+    #fcd116,
+    #c8102e
+  );
+  background-size: 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 10s linear infinite;
+  position: relative;
+}
+
+.about-us-head h1 {
+    font-size: clamp(30px, 5vw, 70px);
+}
+
+.fancy-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(to right, #fcd116, #c8102e);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(252, 209, 22, 0.5);
+}
+
+
+.carousel {
+  position: relative;
+  width: 90%;
+  height: 550px;            /* give it room */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5%;
+}
+
+.carousel-track {
+  position: relative;
+  width: 680px;
+  height: 100%;
+  perspective: 1200px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.card {
+  position: absolute;
+  width: 690px;
+  height: 690px;
+  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1),
+              opacity 0.8s ease-in-out;
+  will-change: transform;
+  border-radius: 20px;
+}
+
+.card.active {
+  transform: translateX(0)   scale(1)   rotateY(0deg);
+  z-index: 3;
+  opacity: 1;
+}
+
+.card.left {
+  transform: translateX(-250px) scale(0.85) rotateY(15deg);
+  z-index: 2;
+  opacity: 0.55;
+}
+
+.card.right {
+  transform: translateX( 250px) scale(0.85) rotateY(-15deg);
+  z-index: 2;
+  opacity: 0.55;
+}
+
+.arrow {
+  font-size: 2.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 4;
+  color: #000;
+}
+
+.arrow.left  { position: absolute; left: 15px; }
+.arrow.right { position: absolute; right: 15px; }
+
+
+/* ----------  Tablet (landscape & portrait)  ---------- */
+/* Target iPad-ish screens & small laptops up to 1024 px */
+@media (max-width: 1024px) {
+  /* headline */
+  .about-us-head {
+    margin: 10% 15%;
+  }
+  .about-us-head h1 {
+    font-size: clamp(32px, 6vw, 56px);
+  }
+
+  /* carousel wrapper */
+  .carousel {
+    width: 100%;
+    margin-left: 0;
+    height: 520px;
+  }
+
+  /* 3-D track & cards */
+  .carousel-track {
+    width: 80vw;                 /* stretch with viewport */
+    height: 100%;
+  }
+  .card {
+    width: 80vw;
+    height: 520px;
+  }
+  .card.left  { transform: translateX(-180px) scale(0.85) rotateY(12deg); }
+  .card.right { transform: translateX( 180px) scale(0.85) rotateY(-12deg); }
+
+  /* arrows */
+  .arrow {
+    font-size: 1.9rem;
+  }
+}
+
+/* ----------  Phones & small tablets  ---------- */
+/* Anything narrower than ~640 px */
+@media (max-width: 640px) {
+  /* headline */
+  .about-us-head {
+    margin: 14% 5%;
+  }
+  .about-us-head h1 {
+    font-size: clamp(28px, 8vw, 44px);
+  }
+
+  /* carousel wrapper */
+  .carousel {
+    height: 380px;
+  }
+
+  /* track & cards */
+  .carousel-track {
+    width: 95vw;
+    height: 100%;
+  }
+  .card {
+    width: 95vw;
+    height: 380px;
+  }
+  .card.left  { transform: translateX(-120px) scale(0.8) rotateY(8deg); }
+  .card.right { transform: translateX( 120px) scale(0.8) rotateY(-8deg); }
+
+  /* arrows */
+  .arrow {
+    font-size: 1.6rem;
+    left: 8px;
+    right: 8px;
+  }
+}

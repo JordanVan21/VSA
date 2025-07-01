@@ -1,0 +1,120 @@
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 1rem;
+    background:
+    linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #fff7e6 10%,
+      #fdf6ec 95%,
+      #ffffff 100% 
+    );
+    min-height: 100vh;
+}
+
+.contact-card {
+    background-color: #fffaf0;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    border: 1px solid #ffeccc;
+    position: relative;
+}
+
+.contact-head h5 {
+    font-size: 2.5rem;
+    color: #c80000;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+/* Footer contact text */
+.contact-card .contact-info {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.contact-card .contact-info strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #111;
+}
+
+.contact-card h6 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.contact-card {
+  animation: fadeInScale 0.6s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ──────────────────────────── TABLETS ──────────────────────────── */
+/* For screen widths 1024px and below */
+@media (max-width: 1024px) {
+  .contact {
+    padding: 4rem 1rem;
+  }
+
+  .contact-card {
+    padding: 2.5rem 2rem;
+    max-width: 95%;
+    border-radius: 14px;
+  }
+
+  .contact-head h5 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-card h6 {
+    font-size: 1.3rem;
+  }
+
+  .contact-card .contact-info {
+    font-size: 1.05rem;
+  }
+}
+
+/* ──────────────────────────── PHONES ──────────────────────────── */
+/* For screen widths 640px and below */
+@media (max-width: 640px) {
+  .contact {
+    padding: 3rem 0.75rem;
+  }
+
+  .contact-card {
+    padding: 2rem 1.25rem;
+    border-radius: 12px;
+  }
+
+  .contact-head h5 {
+    font-size: 1.75rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .contact-card h6 {
+    font-size: 1.1rem;
+  }
+
+  .contact-card .contact-info {
+    font-size: 1rem;
+  }
+}

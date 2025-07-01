@@ -1,0 +1,95 @@
+.accordion-container {
+    margin-left: 10%;
+    max-width: 80%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.accordion-button {
+  background-color: #fdf2f8; /* soft peach */
+  color: #8b0000; /* VSA dark red */
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(0.5rem, 1.5rem, 2.5rem);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.accordion-button:hover {
+  background-color: #fce6dd;
+  border-color: #ffcab1;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #fdf2f8;
+  color: #8b0000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-item {
+  background: transparent;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.accordion-body {
+  background-color: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 0 0 8px 8px;
+  color: #333;
+  font-size: 1rem;
+  border-top: 1px solid #eee;
+}
+
+
+/* ───────────────────────────────────────── TABLETS ───────────────────────────────────────── */
+/* iPad-class portrait/landscape and small laptops (≤ 1024 px) */
+@media (max-width: 1024px) {
+  /* container centres better on mid-sized screens */
+  .accordion-container {
+    margin-left: 5%;
+    max-width: 90%;
+  }
+
+  /* button text scales down a bit */
+  .accordion-button {
+    font-size: clamp(0.75rem, 1.25rem, 1.75rem);
+    padding: 0.65rem 1rem;
+  }
+
+  /* body text breathing room */
+  .accordion-body {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* ───────────────────────────────────────── PHONES ───────────────────────────────────────── */
+/* Phones & small tablets (≤ 640 px) */
+@media (max-width: 640px) {
+  .accordion-container {
+    margin-left: 2%;
+    max-width: 96%;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);   /* slightly lighter shadow */
+  }
+
+  .accordion-button {
+    font-size: clamp(0.65rem, 4.5vw, 1.25rem);
+    padding: 0.55rem 0.85rem;
+    border-radius: 6px;
+  }
+
+  .accordion-button:not(.collapsed) {
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  }
+
+  .accordion-item {
+    margin-bottom: 0.75rem;
+  }
+
+  .accordion-body {
+    padding: 0.9rem;
+    font-size: 0.9rem;
+  }
+}

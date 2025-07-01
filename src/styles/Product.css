@@ -1,0 +1,136 @@
+@keyframes shine {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.product-head {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8%;
+  margin-bottom: 3%;
+  font-size: clamp(45px, 60px, 75px);
+  background: linear-gradient(
+    90deg,
+    #c8102e,
+    #fcd116,
+    #006a44,
+    #fcd116,
+    #c8102e
+  );
+  background-size: 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 10s linear infinite;
+  position: relative;
+}
+
+.fancy-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(to right, #fcd116, #c8102e);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(252, 209, 22, 0.5);
+}
+
+.product-style {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: start;
+}
+
+.explore {
+  text-align: center;
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 4rem;
+  opacity: 0.9;
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.3s ease-in-out;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.disclaimer {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  text-align: center;
+}
+
+
+/* ────────────────────────────  TABLETS  ──────────────────────────── */
+/* iPad portrait / landscape and small laptops  ≤ 1024 px */
+@media (max-width: 1024px) {
+  /* headline */
+  .product-head {
+    margin-top: 10%;
+    margin-bottom: 2.5%;
+    font-size: clamp(2rem, 6vw, 3rem);   /* ~32–48 px */
+  }
+
+  /* grid shifts to two columns */
+  .product-style {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  /* explore text & disclaimer shrink a bit */
+  .explore {
+    font-size: clamp(0.9rem, 1.3rem, 1.6rem);
+    margin-bottom: 3rem;
+  }
+  .disclaimer {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    font-size: 0.9rem;
+  }
+}
+
+/* ────────────────────────────  PHONES  ──────────────────────────── */
+/* Phones & very small tablets  ≤ 640 px */
+@media (max-width: 640px) {
+  .product-head {
+    margin-top: 12%;
+    margin-bottom: 2rem;
+    font-size: clamp(1.5rem, 8vw, 2.2rem);  /* ~24–35 px */
+  }
+
+  /* single-column product grid */
+  .product-style {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .explore {
+    font-size: clamp(0.85rem, 4.5vw, 1.3rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .disclaimer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+  }
+}

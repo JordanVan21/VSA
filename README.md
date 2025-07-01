@@ -1,4 +1,6 @@
 # WWUVSA
 
-I made a VSA website for WWU for a html/css certificate project.
+A VSA website.
 Utilized for engangement, marketing, and outreach for WWUVSA.
+
+Tools: React

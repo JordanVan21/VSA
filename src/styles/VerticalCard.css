@@ -25,6 +25,16 @@
   box-sizing: border-box;
 }
 
+.vertical-imgbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-top: -5%;
+  margin-bottom: 3%;
+}
+
 .vertical-img {
   margin: 0 auto;
   max-width: 100%;
@@ -163,94 +173,106 @@
 }
 
 
-/* ────────────────────────────  TABLETS  ──────────────────────────── */
-/* iPad portrait / landscape & small laptops  ≤ 1024 px */
+/* ═══════════════════════ TABLETS (≤ 1024 px) ═══════════════════════ */
 @media (max-width: 1024px) {
-  /* GENERAL VERTICAL INFO CARD */
-  .vertical-container {
-    grid-template-rows: 1fr;          /* stack image + text */
+
+  /* ——— GENERAL INFO CARD ——— */
+  .vertical-container{
+    grid-template-rows: 1fr;          /* stack image + text   */
     padding: 1.75rem 1rem;
     gap: 1.25rem;
     border-radius: 24px;
   }
-  .vertical-container p { font-size: 1.25rem; }
+  .vertical-container p{font-size:1.25rem;}
 
-  .vertical-box { margin-bottom: 1rem; }
-  .vertical-img { max-width: 90%; }
-
-  .list-items   { margin-left: 3%; font-size: clamp(0.75rem, 1.1rem, 1.6rem); }
-
-  /* PRODUCT VERTICAL CARD */
-  .one-container {
-    padding-top: 3%;
-    min-height: 620px;
+  /* image wrapper + image */
+  .vertical-imgbox{
+    margin: 0 0 1rem;
   }
-  .merch-head { padding-left: 5%; }
-  .one-container p { padding: 0 6% 0 5%; font-size: 1.1rem; }
+  .vertical-img{max-width:90%;}
 
-  .one-box { margin: 0 8%; }
-  .one-img { max-width: 340px; height: 290px; }
+  .list-items{margin-left:3%;font-size:clamp(.75rem,1.1rem,1.6rem);}
 
-  /* INNER FEATURE CARD */
-  .innerCard {
-    padding: 1.75rem;
-    height: 600px;
+  /* ——— PRODUCT CARD ——— */
+  .one-container{
+    padding-top:3%;
+    min-height:620px;
   }
-  .innerCard h3 { font-size: 1.5rem; }
-  .innerCard img { width: 160px; }
+  .merch-head{padding-left:5%;}
+  .one-container p{padding:0 6% 0 5%;font-size:1.1rem;}
 
-  /* SUB-CARDS GRID */
-  .small-cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3%;
-    height: auto;
-    margin: 6% 4%;
+  .one-box{margin:0 8%;}
+  .one-img{max-width:340px;height:290px;}
+
+  /* ——— FEATURE CARD INSIDE CAROUSEL ——— */
+  .innerCard{
+    padding:1.75rem;
+    height:600px;
   }
-  .subCard p { font-size: clamp(0.65rem, 2vw, 0.9rem); }
+  .innerCard h3{font-size:1.5rem;}
+  .innerCard img{width:160px;}
+
+  /* ——— SMALL BULLET CARDS ——— */
+  .small-cards{
+    grid-template-columns:repeat(2,1fr);
+    gap:3%;
+    margin:6% 4%;
+    height:auto;
+  }
+  .subCard p{font-size:clamp(.65rem,2vw,.9rem);}
 }
 
-/* ────────────────────────────  PHONES  ──────────────────────────── */
-/* Phones & very small tablets  ≤ 640 px */
+/* ═══════════════════════ PHONES (≤ 640 px) ═══════════════════════ */
 @media (max-width: 640px) {
-  /* GENERAL VERTICAL INFO CARD */
-  .vertical-container {
-    padding: 1.25rem 0.75rem;
-    border-radius: 18px;
+
+  /* ——— GENERAL INFO CARD ——— */
+  .vertical-container{
+    padding:1.25rem .75rem;
+    border-radius:18px;
   }
-  .vertical-container p { font-size: 1rem; padding-left: 0; }
+  .vertical-container p{font-size:1rem;padding-left:0;}
 
-  .vertical-box { justify-content: center; }
-  .vertical-img { max-width: 100%; border-radius: 10px; }
+  .vertical-imgbox{margin:0 0 1rem;}
+  .vertical-img{max-width:100%;border-radius:10px;}
 
-  .title, .title-extra, .sub-title { margin-left: 0; text-align: center; }
-  .list-items   { margin-left: 0; font-size: clamp(0.7rem, 0.95rem, 1.2rem); }
-
-  /* PRODUCT VERTICAL CARD */
-  .one-container {
-    margin: 10px 0;
-    padding-top: 5%;
-    min-height: 0;               /* allow auto height */
+  /* center titles */
+  .title,.title-extra,.sub-title{
+    margin-left:0;
+    text-align:center;
   }
-  .merch-head { padding-left: 0; text-align: center; }
-  .one-container p { padding: 0 5%; font-size: 0.95rem; }
+  .list-items{margin-left:0;font-size:clamp(.7rem,.95rem,1.2rem);}
 
-  .one-box { margin: 0 5%; }
-  .one-img { max-width: 100%; height: 240px; }
-
-  /* INNER FEATURE CARD */
-  .innerCard {
-    padding: 1.25rem;
-    height: auto;
+  /* ——— PRODUCT CARD ——— */
+  .one-container{
+    margin:10px 0;
+    padding-top:5%;
+    min-height:0;                     /* auto height */
   }
-  .innerCard h3 { font-size: 1.3rem; }
-  .innerCard img { width: 140px; }
-
-  /* SUB-CARDS GRID */
-  .small-cards {
-    grid-template-columns: 1fr;   /* stack vertically */
-    gap: 4%;
-    margin: 8% 2%;
+  .merch-head{
+    padding-left:0;
+    text-align:center;
   }
-  .subCard { border-width: 3px; }
-  .subCard p { font-size: clamp(0.6rem, 0.85rem, 1rem); }
+  .one-container p{
+    padding:0 5%;
+    font-size:.95rem;
+  }
+  .one-box{margin:0 5%;}
+  .one-img{max-width:100%;height:240px;}
+
+  /* ——— FEATURE CARD INSIDE CAROUSEL ——— */
+  .innerCard{
+    padding:1.25rem;
+    height:auto;
+  }
+  .innerCard h3{font-size:1.3rem;}
+  .innerCard img{width:140px;}
+
+  /* ——— SMALL BULLET CARDS ——— */
+  .small-cards{
+    grid-template-columns:1fr;        /* one per row */
+    gap:4%;
+    margin:8% 2%;
+  }
+  .subCard{border-width:3px;}
+  .subCard p{font-size:clamp(.6rem,.85rem,1rem);}
 }

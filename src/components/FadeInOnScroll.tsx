@@ -5,19 +5,19 @@ export function FadeInOnScroll() {
   const [isVisible, setVisible] = useState(false);
 
   useEffect(() => {
+    // looser threshold on narrow screens
+    const smallScreen = window.innerWidth <= 640;
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting),
       {
-        threshold: 0.5, // 50 % must be on-screen
-        rootMargin: "0px 0px -10% 0px", // and keep it alive a bit longer
+        threshold: smallScreen ? 0.25 : 0.5,          // 25 % on phones, 50 % elsewhere
+        rootMargin: smallScreen ? "0px 0px -5% 0px"
+                                : "0px 0px -10% 0px"
       }
     );
 
     if (ref.current) observer.observe(ref.current);
-
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
+    return () => observer.disconnect();
   }, []);
 
   return { ref, isVisible };

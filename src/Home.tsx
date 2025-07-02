@@ -48,7 +48,7 @@ function Home() {
               "Builds long-term connections, leadership skills, and cultural appreciation",
             ]}
             containerClassName="container"
-            boxClassName="box"
+            boxClassName="box sliding-card"
             imgClassName="img"
             pClassName="p"
             titleClassName="subgroup-title"
@@ -82,7 +82,7 @@ function Home() {
             ]}
             alt="Fan Dance Images"
             containerClassName="container"
-            boxClassName="box"
+            boxClassName="box sliding-card"
             imgClassName="img"
             pClassName="p"
             titleClassName="subgroup-title"
@@ -112,7 +112,7 @@ function Home() {
             ]}
             alt="Fan Dance Images"
             containerClassName="container"
-            boxClassName="box"
+            boxClassName="box sliding-card"
             imgClassName="img"
             pClassName="p"
             titleClassName="subgroup-title"

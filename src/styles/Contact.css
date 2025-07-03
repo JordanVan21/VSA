@@ -117,4 +117,9 @@
   .contact-card .contact-info {
     font-size: 1rem;
   }
+
+  .contact iframe {
+    width: 350px;
+    margin-left: -6%;
+  }
 }

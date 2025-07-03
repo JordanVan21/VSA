@@ -29,18 +29,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  box-sizing: border-box;
-  margin-top: -5%;
   margin-bottom: 3%;
+  background: linear-gradient(to right, #fff8f0, #fdf2f8);
+  padding: 0.5rem;
+  overflow: hidden;
 }
 
-.vertical-img {
-  margin: 0 auto;
-  max-width: 100%;
-  max-width: 650px;
-  height: auto;
-  display: block;
+/* video itself */
+.vertical-imgbox video {
+  width: 100%;
+  max-width: 700px;
+  height: 500px;
+  background: #000;
+  border: none;
+  border-radius: 12px;
 }
 
 .vertical-container .highlights {
@@ -63,7 +65,7 @@
   border: none;
   border-radius: 30px;
   margin: 15px;
-  padding-top: 4%;
+  padding: 4% 0%;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   color: #2E2E2E;
   min-height: 725px;
@@ -131,14 +133,8 @@
   margin: 5% 2%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 2fr));
+  gap: 1.25rem;            /* controls space between cards */
   text-align: center;
-  gap: 2%;
-  height: 210px;
-
-}
-
-.small-cards > div {
-  margin: 0% 1%;
   height: 210px;
 }
 
@@ -146,15 +142,22 @@
   background: linear-gradient(135deg, #fdf6ec, #fff);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
   padding: 1rem;
   border: 5px solid #D62828;
   border-radius: 8px;
+  height: 100%;
 }
 
-.subCard p {
-  font-size: clamp(8px, 2.5vw, 15px);
+.subCard h6 {
+   margin: 0; 
+  }
+.subCard p  { 
+  margin: 0; 
+  font-size: 
+  clamp(8px, 2.5vw, 15px); 
 }
 
 .innerCard {
@@ -186,12 +189,21 @@
   .vertical-container p{font-size:1.25rem;}
 
   /* image wrapper + image */
-  .vertical-imgbox{
-    margin: 0 0 1rem;
+  .vertical-imgbox {
+    margin-bottom: -5%;
   }
-  .vertical-img{max-width:90%;}
+
+  .vertical-imgbox video{
+    height: 350px;
+    border-radius: 10px;
+  } 
 
   .list-items{margin-left:3%;font-size:clamp(.75rem,1.1rem,1.6rem);}
+
+  .vertical-container .highlights {
+  font-size: 17px;
+  font-weight: bold;
+}
 
   /* ——— PRODUCT CARD ——— */
   .one-container{
@@ -230,10 +242,17 @@
     padding:1.25rem .75rem;
     border-radius:18px;
   }
-  .vertical-container p{font-size:1rem;padding-left:0;}
+  .vertical-container p{
+    font-size:1rem;padding-left:0;}
 
-  .vertical-imgbox{margin:0 0 1rem;}
-  .vertical-img{max-width:100%;border-radius:10px;}
+  .vertical-imgbox {
+    margin-bottom: -5%;
+  }
+
+  .vertical-imgbox video{
+    height: 250px;
+    border-radius: 10px;
+  } 
 
   /* center titles */
   .title,.title-extra,.sub-title{
@@ -242,13 +261,19 @@
   }
   .list-items{margin-left:0;font-size:clamp(.7rem,.95rem,1.2rem);}
 
+  .vertical-container .highlights {
+  font-size: 13px;
+  font-weight: bold;
+}
+
   /* ——— PRODUCT CARD ——— */
   .one-container{
-    margin:10px 0;
+    margin: 5px 0;
     padding-top:5%;
     min-height:0;                     /* auto height */
   }
   .merch-head{
+    /* margin-top: 3%; */
     padding-left:0;
     text-align:center;
   }
@@ -259,20 +284,4 @@
   .one-box{margin:0 5%;}
   .one-img{max-width:100%;height:240px;}
 
-  /* ——— FEATURE CARD INSIDE CAROUSEL ——— */
-  .innerCard{
-    padding:1.25rem;
-    height:auto;
-  }
-  .innerCard h3{font-size:1.3rem;}
-  .innerCard img{width:140px;}
-
-  /* ——— SMALL BULLET CARDS ——— */
-  .small-cards{
-    grid-template-columns:1fr;        /* one per row */
-    gap:4%;
-    margin:8% 2%;
-  }
-  .subCard{border-width:3px;}
-  .subCard p{font-size:clamp(.6rem,.85rem,1rem);}
 }

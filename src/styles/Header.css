@@ -22,7 +22,7 @@
 }
 
 /* Navigation container */
-.nav {
+.main-nav {
   display: flex;
   gap: 40px;
 }
@@ -30,7 +30,7 @@
 /* Individual nav links */
 .nav-link {
   position: relative;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-decoration: none;
   color: black;
   padding: 5px 0;
@@ -68,7 +68,7 @@
 /* Banner container inside header */
 .banner-container {
   position: relative;
-  width: 800px; 
+  width: 750px; 
   height: 50px; 
   overflow: hidden; 
   margin-left: 20px;
@@ -138,7 +138,7 @@
     width: 18vw;                      /* keep logo readable */
   }
 
-  .nav {
+  .main-nav {
     gap: 16px;
   }
 

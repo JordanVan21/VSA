@@ -140,37 +140,142 @@
 }
 
 /* ----------  Phones & small tablets  ---------- */
-/* Anything narrower than ~640 px */
 @media (max-width: 640px) {
-  /* headline */
-  .about-us-head {
-    margin: 14% 5%;
-  }
-  .about-us-head h1 {
-    font-size: clamp(28px, 8vw, 44px);
-  }
-
-  /* carousel wrapper */
+  /* Carousel wrapper */
   .carousel {
-    height: 380px;
+    position: relative;
+    width: 100%;
+    height: 650px; /* adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 3rem; /* space above footer */
   }
 
-  /* track & cards */
+  /* Track to hold all cards */
   .carousel-track {
-    width: 95vw;
+    position: relative;
+    width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .card {
-    width: 95vw;
-    height: 380px;
-  }
-  .card.left  { transform: translateX(-120px) scale(0.8) rotateY(8deg); }
-  .card.right { transform: translateX( 120px) scale(0.8) rotateY(-8deg); }
 
-  /* arrows */
+  /* Core card */
+  .card {
+    position: absolute;
+    width: 90vw;
+    max-width: 360px;
+    height: 100%;
+    border-radius: 16px;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    will-change: transform;
+  }
+
+  .card.active {
+    transform: translateX(0) scale(1);
+    z-index: 3;
+    opacity: 1;
+  }
+
+  .card.left {
+    transform: translateX(-100%) scale(0.9) rotateY(8deg);
+    z-index: 2;
+    opacity: 0.35;
+  }
+
+  .card.right {
+    transform: translateX(100%) scale(0.9) rotateY(-8deg);
+    z-index: 2;
+    opacity: 0.35;
+  }
+
+  /* Arrows */
   .arrow {
-    font-size: 1.6rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  .arrow.left {
     left: 8px;
+  }
+
+  .arrow.right {
     right: 8px;
+  }
+
+  /* Inner card contents */
+  .innerCard {
+    padding: 1rem;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .innerCard h3 {
+    font-size: 1.05rem;
+    text-align: center;
+  }
+
+  .innerCard p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .innerCard img {
+    width: 130px;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+
+  /* Stack subCards */
+  .small-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .subCard {
+    width: 100%;
+    max-width: 350px;
+    padding: 1rem;
+    /* box-sizing: border-box; */
+    border: 2px solid red;
+    border-radius: 8px;
+    text-align: center;
+    /* word-break: break-word; */
+  }
+
+  .small-cards > div {
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  .subCard header {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .subCard h6 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .subCard p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 }

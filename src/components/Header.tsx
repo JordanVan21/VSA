@@ -22,7 +22,7 @@ const Header = ({ onNavClick, activeLabel }: Props) => {
       <div className="banner-container">
         <Banner message="Welcome to WWU VSA!" />
       </div>
-      <nav className="nav" id="nav-bar">
+      <nav className="main-nav" id="nav-bar">
         {["Home", "Products", "About", "Contact"].map((label) => (
           <Link
             key={label}

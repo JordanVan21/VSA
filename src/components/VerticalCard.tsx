@@ -75,7 +75,7 @@ const VerticalVideoCard = ({
     <div>
       <div className="vertical-container">
         <div className="vertical-imgbox">
-          <video controls width="700" height="500">
+          <video className="highlight-video" controls>
             <source src={video} type="video/mp4" />
             {alt}
           </video>

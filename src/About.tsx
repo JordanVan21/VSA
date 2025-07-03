@@ -40,7 +40,7 @@ function About() {
           }
           card2={
             <DescripCard
-              head="ETHNIC STUDENT CENTER (ESC)"
+              head="ETHNIC STUDENT CENTER (ESC) (Disbanded)"
               logo="https://i.imgur.com/P0MCRcv.png"
               alt="WWU ESC Logo"
               content="The Vietnamese Student Association (VSA) is a proud member of Western Washington University's Ethnic Student Center 

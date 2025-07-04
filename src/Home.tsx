@@ -37,7 +37,7 @@ function Home() {
             title="ACCE"
             img1="https://i.imgur.com/2i0bVeg.jpeg"
             img2="https://i.imgur.com/k5B0wEk.jpeg"
-            img3="https://i.imgur.com/ECd57Gj.jpeg"
+            img3="https://i.imgur.com/ZUE1hsM.jpeg"
             alt="ACCE Img"
             content="The ACCE program is a core part of WWU VSA, fostering cultural pride, mentorship, and meaningful relationships."
             listItems={[
@@ -214,8 +214,8 @@ function Home() {
         <Accordion
           title="Fundraising"
           img1="https://i.imgur.com/svwotuw.jpeg"
-          img2="https://i.imgur.com/BtGFlnC.jpeg"
-          img3="https://i.imgur.com/Y0jUldr.jpeg"
+          img2="https://i.imgur.com/8HOJmk5.jpeg"
+          img3="https://i.imgur.com/f7KyJGL.jpeg"
           content="Fundraising is an essential part of WWU VSA, combining community spirit with purposeful action. It supports events, 
           outreach, and programs while giving members a chance to contribute meaningfully."
           bulletPointHead="EVENT HIGHTLIGHTS:"
